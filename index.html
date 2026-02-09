@@ -1,144 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B.L.A.S.T. - Inspired Ink</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splattered Inks Tattoo Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
+<body class="bg-black text-gray-200 font-inter">
 
-<body>
+    <header class="header py-4 px-6">
+        <nav class="container mx-auto flex items-center justify-between">
+            <a href="/" class="text-2xl font-semibold text-primary-accent">Splattered Inks</a>
+            <ul class="flex space-x-6">
+                <li><a href="#portfolio" class="hover:text-secondary-accent">Portfolio</a></li>
+                <li><a href="#about" class="hover:text-secondary-accent">About</a></li>
+                <li><a href="#contact" class="hover:text-secondary-accent">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header class="header">
-    <nav class="nav">
-      <div class="nav__logo">B.L.A.S.T.</div>
-      <ul class="nav__list">
-        <li class="nav__item"><a href="#hero" class="nav__link">Hero</a></li>
-        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-        <li class="nav__item"><a href="#features" class="nav__link">Features</a></li>
-        <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
-        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="main">
-
-    <section id="hero" class="hero">
-      <video class="hero__video-bg" autoplay muted loop playsinline poster="assets/hero_poster.jpg">
-        <source src="assets/hero.mp4" type="video/mp4">
-      </video>
-      <div class="hero__overlay"></div>
-      <div class="hero__content">
-        <h1 class="hero__title" data-animate="fade-up">Unleash Your Creative Potential</h1>
-        <p class="hero__subtitle" data-animate="fade-up">Explore the dynamic world of abstract art and modern design.
-        </p>
-        <a href="#features" class="hero__button button" data-animate="fade-up">Discover More</a>
-      </div>
-    </section>
-
-    <section id="about" class="section about">
-      <div class="section__container">
-        <h2 class="section__title" style="color: #6200EE;" data-animate="fade-in">About B.L.A.S.T.</h2>
-        <p class="section__description" data-animate="fade-in">
-          B.L.A.S.T. is a platform dedicated to inspiring and empowering artists and designers. We believe in the
-          power of creative expression and aim to provide resources and opportunities for individuals to explore their
-          artistic potential.
-        </p>
-      </div>
-    </section>
-
-    <section id="features" class="section features">
-      <div class="section__container">
-        <h2 class="section__title" data-animate="fade-in">Key Features</h2>
-        <div class="bento-grid" data-animate="slide-up">
-
-          <div class="bento-grid__item bento-grid__item--1">
-            <div class="glass-card">
-              <h3 class="glass-card__title">Creative Tools</h3>
-              <p class="glass-card__description">Access a wide range of digital art tools and resources.</p>
+    <main>
+        <section id="hero" class="hero relative h-screen flex items-center justify-center overflow-hidden">
+            <video class="absolute inset-0 object-cover w-full h-full z-0" autoplay loop muted>
+                <source src="assets/video/cyberpunk_tattoo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero__overlay absolute inset-0 bg-black opacity-50 z-10"></div>
+            <div class="hero__content relative z-20 text-center">
+                <h1 class="text-5xl font-bold mb-4 heading-shadow" data-animate="fade-up">Splattered Inks</h1>
+                <p class="text-lg mb-8 heading-shadow" data-animate="fade-up" data-delay="0.2">Cyberpunk Tattoo Artistry</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#portfolio" class="button button--primary" data-animate="fade-up" data-delay="0.4">View Portfolio</a>
+                    <a href="#contact" class="button button--secondary" data-animate="fade-up" data-delay="0.6">Book Appointment</a>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="bento-grid__item bento-grid__item--2">
-            <div class="glass-card">
-              <h3 class="glass-card__title">Inspiration Gallery</h3>
-              <p class="glass-card__description">Browse a curated collection of inspiring artwork.</p>
+        <section id="portfolio" class="portfolio py-16 px-6">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-semibold mb-8 text-center" data-animate="fade-in">Portfolio</h2>
+                <div class="portfolio__grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 organic-grid">
+                    <div class="portfolio__item" data-animate="slide-up">
+                        <img src="assets/img/tattoo1.jpg" alt="Tattoo 1" class="portfolio__image clip-polygon">
+                    </div>
+                    <div class="portfolio__item" data-animate="slide-up" data-delay="0.2">
+                        <img src="assets/img/tattoo2.jpg" alt="Tattoo 2" class="portfolio__image clip-polygon">
+                    </div>
+                    <div class="portfolio__item" data-animate="slide-up" data-delay="0.4">
+                        <img src="assets/img/tattoo3.jpg" alt="Tattoo 3" class="portfolio__image clip-polygon">
+                    </div>
+                     <div class="portfolio__item" data-animate="slide-up">
+                        <img src="assets/img/tattoo4.jpg" alt="Tattoo 4" class="portfolio__image clip-polygon">
+                    </div>
+                    <div class="portfolio__item" data-animate="slide-up" data-delay="0.2">
+                        <img src="assets/img/tattoo5.jpg" alt="Tattoo 5" class="portfolio__image clip-polygon">
+                    </div>
+                    <div class="portfolio__item" data-animate="slide-up" data-delay="0.4">
+                        <img src="assets/img/tattoo6.jpg" alt="Tattoo 6" class="portfolio__image clip-polygon">
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="bento-grid__item bento-grid__item--3">
-            <div class="glass-card">
-              <h3 class="glass-card__title">Community Forum</h3>
-              <p class="glass-card__description">Connect with other artists and share your work.</p>
+        <section id="about" class="about py-16 px-6">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-semibold mb-8 text-center" data-animate="fade-in">About Splattered Inks</h2>
+                <p class="mb-6" data-animate="fade-up">Splattered Inks is a collective of passionate tattoo artists specializing in cyberpunk and modern art-inspired designs. We pride ourselves on creating unique and high-quality tattoos that reflect our clients' individuality.</p>
+                <div class="about__artists grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="about__artist" data-animate="slide-in-left">
+                        <img src="assets/img/artist1.jpg" alt="Artist 1" class="rounded-full w-32 h-32 object-cover mb-4">
+                        <h3 class="text-xl font-semibold">Kai "Pixel" Nguyen</h3>
+                        <p>Specializes in detailed cyberpunk-themed tattoos.</p>
+                    </div>
+                    <div class="about__artist" data-animate="slide-in-right">
+                        <img src="assets/img/artist2.jpg" alt="Artist 2" class="rounded-full w-32 h-32 object-cover mb-4">
+                        <h3 class="text-xl font-semibold">Lena "Glitch" Petrova</h3>
+                        <p>Focuses on abstract and geometric tattoo designs.</p>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="bento-grid__item bento-grid__item--4">
-            <div class="glass-card">
-              <h3 class="glass-card__title">Exclusive Tutorials</h3>
-              <p class="glass-card__description">Learn new techniques from industry experts.</p>
+        <section id="contact" class="contact py-16 px-6">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-semibold mb-8 text-center" data-animate="fade-in">Contact Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="contact__form" data-animate="slide-in-left">
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-100 text-sm font-bold mb-2">Name</label>
+                                <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 text-gray-200">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-100 text-sm font-bold mb-2">Email</label>
+                                <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 text-gray-200">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-100 text-sm font-bold mb-2">Message</label>
+                                <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 text-gray-200"></textarea>
+                            </div>
+                            <button type="submit" class="button button--primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact__info" data-animate="slide-in-right">
+                        <h3 class="text-xl font-semibold mb-4">Visit Us</h3>
+                        <p>123 Cyberpunk Street, Neo-City</p>
+                        <p>Open Daily: 10 AM - 8 PM</p>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.759709532351!2d-0.12775838422415365!3d51.50735091972436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ca9e324d537%3A0x6a9b35b04d45a404!2sTrafalgar%20Square!5e0!3m2!1sen!2sus!4v1680798227088!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
+    </main>
 
-          <div class="bento-grid__item bento-grid__item--5">
-            <div class="glass-card">
-              <h3 class="glass-card__title">Personalized Feedback</h3>
-              <p class="glass-card__description">Get constructive criticism on your artwork.</p>
-            </div>
-          </div>
+    <footer class="footer py-4 px-6 text-center">
+        <p>&copy; 2024 Splattered Inks. All rights reserved.</p>
+    </footer>
 
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio" class="section portfolio">
-      <div class="section__container">
-        <h2 class="section__title" data-animate="fade-in">Portfolio</h2>
-        <div class="gallery" data-animate="slide-up">
-          <!-- Images will be added dynamically with JS -->
-          <img src="https://via.placeholder.com/300" alt="Portfolio Item 1">
-          <img src="https://via.placeholder.com/300" alt="Portfolio Item 2">
-          <img src="https://via.placeholder.com/300" alt="Portfolio Item 3">
-          <img src="https://via.placeholder.com/300" alt="Portfolio Item 4">
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <div class="section__container">
-        <h2 class="section__title" data-animate="fade-in">Contact Us</h2>
-        <form class="contact-form" data-animate="slide-up">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="button">Submit</button>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2024 B.L.A.S.T. All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
-
 </html>
