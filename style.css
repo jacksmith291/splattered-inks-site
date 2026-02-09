@@ -52,9 +52,42 @@ a:hover {
 
 /* Hero Section Styles */
 #hero {
-  padding: 5rem 2rem;
+  position: relative;
+  height: 80vh; /* Banner height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   text-align: center;
+  color: white;
 }
+
+.hero__video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Overlay for contrast */
+  z-index: 2;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Update Glass Card for visibility on dark if needed, but existing is fine */
 
 /* Bento Grid Styles */
 .bento-grid {
