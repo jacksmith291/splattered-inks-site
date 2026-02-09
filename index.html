@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.L.A.S.T. - Inspired Ink</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap">
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <div class="nav__logo">B.L.A.S.T.</div>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#hero" class="nav__link">Hero</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#features" class="nav__link">Features</a></li>
+        <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <section id="hero" class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title" data-animate="fade-up">Unleash Your Creative Potential</h1>
+        <p class="hero__subtitle" data-animate="fade-up">Explore the dynamic world of abstract art and modern design.</p>
+        <a href="#features" class="hero__button button" data-animate="fade-up">Discover More</a>
+      </div>
+      <div class="hero__ink-effect">
+        <!-- Ink splatter effect using Three.js or GSAP will be implemented with JS -->
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="section__container">
+        <h2 class="section__title" style="color: #6200EE;" data-animate="fade-in">About B.L.A.S.T.</h2>
+        <p class="section__description" data-animate="fade-in">
+          B.L.A.S.T. is a platform dedicated to inspiring and empowering artists and designers. We believe in the
+          power of creative expression and aim to provide resources and opportunities for individuals to explore their
+          artistic potential.
+        </p>
+      </div>
+    </section>
+
+    <section id="features" class="section features">
+      <div class="section__container">
+        <h2 class="section__title" data-animate="fade-in">Key Features</h2>
+        <div class="bento-grid" data-animate="slide-up">
+
+          <div class="bento-grid__item bento-grid__item--1">
+            <div class="glass-card">
+              <h3 class="glass-card__title">Creative Tools</h3>
+              <p class="glass-card__description">Access a wide range of digital art tools and resources.</p>
+            </div>
+          </div>
+
+          <div class="bento-grid__item bento-grid__item--2">
+            <div class="glass-card">
+              <h3 class="glass-card__title">Inspiration Gallery</h3>
+              <p class="glass-card__description">Browse a curated collection of inspiring artwork.</p>
+            </div>
+          </div>
+
+          <div class="bento-grid__item bento-grid__item--3">
+            <div class="glass-card">
+              <h3 class="glass-card__title">Community Forum</h3>
+              <p class="glass-card__description">Connect with other artists and share your work.</p>
+            </div>
+          </div>
+
+          <div class="bento-grid__item bento-grid__item--4">
+            <div class="glass-card">
+              <h3 class="glass-card__title">Exclusive Tutorials</h3>
+              <p class="glass-card__description">Learn new techniques from industry experts.</p>
+            </div>
+          </div>
+
+          <div class="bento-grid__item bento-grid__item--5">
+            <div class="glass-card">
+              <h3 class="glass-card__title">Personalized Feedback</h3>
+              <p class="glass-card__description">Get constructive criticism on your artwork.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio">
+      <div class="section__container">
+        <h2 class="section__title" data-animate="fade-in">Portfolio</h2>
+        <div class="gallery" data-animate="slide-up">
+          <!-- Images will be added dynamically with JS -->
+          <img src="https://via.placeholder.com/300" alt="Portfolio Item 1">
+          <img src="https://via.placeholder.com/300" alt="Portfolio Item 2">
+          <img src="https://via.placeholder.com/300" alt="Portfolio Item 3">
+          <img src="https://via.placeholder.com/300" alt="Portfolio Item 4">
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="section__container">
+        <h2 class="section__title" data-animate="fade-in">Contact Us</h2>
+        <form class="contact-form" data-animate="slide-up">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="button">Submit</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 B.L.A.S.T. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
