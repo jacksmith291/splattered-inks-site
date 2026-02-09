@@ -1,282 +1,327 @@
 :root {
-  /* Neon Cyberpunk Palette */
-  --background: #050505;
-  --surface: #121212;
-  --text: #E0E0E0;
+  /* Color Palette */
+  --bg-color: #050505;
+  --text-color: #E0E0E0;
   --accent-primary: #FF5F1F;
-  /* Neon Orange */
   --accent-secondary: #00FFFF;
-  /* Cyber Cyan */
-  --accent-glow: rgba(255, 95, 31, 0.6);
 
   /* Fonts */
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body: 'Open Sans', sans-serif;
+  --heading-font: 'Inter', sans-serif;
+  --body-font: 'Inter', sans-serif;
 }
 
 /* General Styles */
 body {
-  font-family: var(--font-body);
-  background-color: var(--background);
-  color: var(--text);
+  font-family: var(--body-font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  /* Subtle Grain/Grid Overlay */
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-heading);
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--accent-primary);
+  font-weight: bold;
   margin-bottom: 0.5em;
 }
 
-h1 {
-  text-shadow: 0 0 10px var(--accent-glow);
-}
-
 a {
-  color: var(--accent-primary);
+  color: var(--accent-secondary);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--accent-secondary);
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+  color: var(--accent-primary);
 }
 
-/* Glassmorphism Styles - Dark Mode */
-.glass {
-  background: rgba(20, 20, 20, 0.6);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+section {
+  padding: 4rem 2rem;
 }
 
-.glass:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-primary);
-}
-
-/* Hero Section Styles */
+/* Hero Section */
 #hero {
   position: relative;
-  height: 90vh;
-  /* Taller banner */
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
+  align-items: center;
   text-align: center;
-  color: white;
+  overflow: hidden;
 }
 
-.hero__video-bg {
+#hero video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
-  opacity: 0.8;
-  /* Dim video slightly */
+  z-index: -1;
 }
 
-.hero__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
-  z-index: 2;
-}
-
-.hero__content {
-  position: relative;
-  z-index: 3;
-  max-width: 800px;
+#hero .hero-content {
   padding: 2rem;
+  z-index: 1;
 }
 
-.hero__title {
-  font-size: 3.5rem;
-  font-weight: 900;
-  line-height: 1.1;
+#hero h1 {
+  font-size: 3rem;
   margin-bottom: 1rem;
-  color: white;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 10px var(--accent-primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero__subtitle {
-  font-size: 1.25rem;
-  color: #ccc;
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#hero .btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--accent-primary);
+  color: var(--bg-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#hero .btn:hover {
+  background-color: var(--accent-secondary);
+}
+
+
+/* Portfolio Section - Organic/Masonry Grid */
+#portfolio {
+  padding: 4rem 2rem;
+}
+
+#portfolio h2 {
+  text-align: center;
   margin-bottom: 2rem;
 }
 
-.hero__button {
-  display: inline-block;
-  background: transparent;
-  border: 2px solid var(--accent-primary);
-  color: var(--accent-primary);
-  padding: 1rem 2.5rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(255, 95, 31, 0.2);
-}
-
-.hero__button:hover {
-  background: var(--accent-primary);
-  color: black;
-  box-shadow: 0 0 30px var(--accent-glow);
-  text-decoration: none;
-}
-
-/* Bento Grid Styles */
-.bento-grid {
+.portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  grid-auto-rows: 200px; /* Initial row height */
 }
 
-/* Section Styling */
-section {
-  padding: 4rem 2rem;
-  margin-bottom: 0;
-}
-
-.section__title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: white;
+.portfolio-item {
   position: relative;
-  display: inline-block;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-item img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.portfolio-item:hover img {
+  filter: grayscale(0%);
+}
+
+/* Span modifiers - You can dynamically adjust these based on your content */
+.portfolio-item:nth-child(5n+1) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.portfolio-item:nth-child(5n+2) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.portfolio-item:nth-child(5n+3) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.portfolio-item:nth-child(5n+4) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.portfolio-item:nth-child(5n+5) {
+    grid-column: span 1;
+    grid-row: span 2;
 }
 
 /* About Section */
 #about {
-  background: var(--surface);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 4rem 2rem;
 }
 
 #about h2 {
-  color: var(--accent-secondary);
-}
-
-/* Gallery Styles */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: grayscale(80%);
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-  filter: grayscale(0%);
-  box-shadow: 0 0 20px var(--accent-secondary);
-}
-
-/* Form Styles */
-#contact {
-  background: black;
-}
-
-form {
-  max-width: 600px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 3rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-label {
-  color: var(--accent-secondary);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-input,
-textarea {
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid #333;
-  color: white;
-  padding: 1rem;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 10px rgba(255, 95, 31, 0.2);
-}
-
-button {
-  background-color: var(--accent-primary);
-  color: black;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 1rem;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: white;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-/* Footer */
-.footer {
   text-align: center;
-  padding: 2rem;
-  font-size: 0.8rem;
-  color: #666;
-  background: black;
-  border-top: 1px solid #111;
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-text {
+  max-width: 700px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.artist-bios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.artist-bio {
+  width: 300px;
+  margin: 1rem;
+  text-align: center;
+}
+
+.artist-bio img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Contact Section */
+#contact {
+  padding: 4rem 2rem;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.contact-form {
+  width: 45%;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  background-color: #111;
+  color: var(--text-color);
+  border-radius: 5px;
+}
+
+.contact-form button {
+  padding: 1rem 2rem;
+  background-color: var(--accent-primary);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-secondary);
+}
+
+.contact-info {
+  width: 45%;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+}
+
+.map-container {
+  height: 300px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* Glassmorphism Styles */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.blur {
+  backdrop-filter: blur(10px);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Example Usage of Animation */
+#hero .hero-content {
+  animation: fadeUp 1s ease-out;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .hero__title {
+  #hero h1 {
     font-size: 2.5rem;
   }
 
-  .bento-grid {
-    grid-template-columns: 1fr;
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
-  #hero {
-    height: 70vh;
+  .portfolio-item {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 95% 100%, 0 100%);
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+    margin-bottom: 2rem;
   }
 }
